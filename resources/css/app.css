@@ -1,0 +1,277 @@
+@import 'tailwindcss';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    /* Custom animations and styles */
+}
+
+/* Gradient shift animation */
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+}
+
+.animate-gradient-text {
+    background-size: 200% auto;
+    animation: gradient-shift 3s linear infinite;
+}
+
+/* Bounce slow animation */
+@keyframes bounce-slow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* Spin slow animation */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+}
+
+/* Float particle animation */
+@keyframes float-particle {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translateY(-30px) translateX(10px) rotate(90deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-60px) translateX(-10px) rotate(180deg);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(-30px) translateX(15px) rotate(270deg);
+        opacity: 0.7;
+    }
+}
+
+.animate-float-particle {
+    animation: float-particle 6s ease-in-out infinite;
+}
+
+/* Sparkle text effect */
+.sparkle {
+    background: linear-gradient(90deg, #ff6b6b, #f59e0b, #6ec1ff, #a78bfa, #ff6b6b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: sparkle-shift 4s linear infinite;
+    background-size: 200% 100%;
+}
+
+@keyframes sparkle-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Open card animation */
+@keyframes openCard {
+    0% {
+        transform: scale(0.8) translateY(30px);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    60% {
+        transform: scale(1.05) translateY(-10px);
+        opacity: 1;
+        filter: blur(0);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-openCard {
+    animation: openCard 800ms cubic-bezier(0.2, 0.85, 0.32, 1) forwards;
+}
+
+/* Floating animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes float-delay {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-25px); }
+}
+
+@keyframes float-delay-2 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delay {
+    animation: float-delay 3.5s ease-in-out infinite;
+}
+
+.animate-float-delay-2 {
+    animation: float-delay-2 4s ease-in-out infinite;
+}
+
+/* Envelope styles */
+.envelope-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.envelope {
+    width: 100%;
+    max-width: 380px;
+    height: 240px;
+    position: relative;
+    cursor: pointer;
+    perspective: 1200px;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-8px);
+}
+
+.envelope-flap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 55%;
+    background: linear-gradient(180deg, #ff93b1, #ff6b9a);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    transform-origin: top center;
+    transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.25, 1);
+    box-shadow: 0 15px 40px rgba(255, 105, 145, 0.2),
+                inset 0 -8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.envelope-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 45%;
+    background: linear-gradient(180deg, #fff5f7, #fff9fb);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.envelope-stitched {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15px;
+    width: 80%;
+    height: 3px;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 8px,
+        rgba(0, 0, 0, 0.06) 8px,
+        rgba(0, 0, 0, 0.06) 10px
+    );
+    border-radius: 2px;
+}
+
+.envelope-stamp {
+    background: linear-gradient(135deg, #fff0f6, #ffd9e3);
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(245, 105, 145, 0.15);
+    margin-bottom: 12px;
+}
+
+.envelope-text {
+    text-align: center;
+}
+
+.envelope-hint {
+    font-size: 14px;
+    color: #ec4899;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(236, 72, 153, 0.3);
+}
+
+/* Glow effect */
+.glow {
+    text-shadow: 0 0 20px rgba(245, 105, 145, 0.5),
+                 0 0 40px rgba(245, 105, 145, 0.3);
+}
+
+/* Additional utility classes */
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+.z-60 {
+    z-index: 60;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .envelope-flap {
+        background: linear-gradient(180deg, #db2777, #be185d);
+    }
+    
+    .envelope-body {
+        background: linear-gradient(180deg, #1f1f1f, #2a2a2a);
+    }
+}
