@@ -13,8 +13,8 @@ class BirthdayController extends Controller
         
         $memories = [
             [
-                'title' => 'Sinh năm 2006',
-                'date' => '2006',
+                'title' => 'Sinh năm 2005',
+                'date' => '2005',
                 'description' => 'Một thiên thần nhỏ chào đời, mang theo nụ cười tươi tắn và trái tim ấm áp',
                 'icon' => '👶'
             ],
@@ -37,7 +37,7 @@ class BirthdayController extends Controller
                 'icon' => '✈️'
             ],
             [
-                'title' => 'Tuổi 19 - Sinh nhật đặc biệt',
+                'title' => 'Tuổi 20 - Sinh nhật đặc biệt',
                 'date' => 'Tháng 11/2025',
                 'description' => 'Dù xa cách, tình bạn vẫn mãi bên nhau. Chúc mừng sinh nhật tuổi 19! 🎉',
                 'icon' => '🎂'
@@ -71,7 +71,7 @@ class BirthdayController extends Controller
             'recipient' => $recipient,
             'memories' => $memories,
             'wishes' => $wishes,
-            'specialMessage' => 'Dù ở xa, tình bạn vẫn luôn ở gần. Chúc mừng sinh nhật 19 tuổi người bạn tuyệt vời! 🎉'
+            'specialMessage' => 'Dù ở xa, tình bạn vẫn luôn ở gần. Chúc mừng sinh nhật 20 tuổi người bạn tuyệt vời! 🎉'
         ]);
     }
 }
