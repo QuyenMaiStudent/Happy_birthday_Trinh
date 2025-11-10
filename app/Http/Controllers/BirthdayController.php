@@ -39,7 +39,7 @@ class BirthdayController extends Controller
             [
                 'title' => 'Tuổi 20 - Sinh nhật đặc biệt',
                 'date' => 'Tháng 11/2025',
-                'description' => 'Dù xa cách, tình bạn vẫn mãi bên nhau. Chúc mừng sinh nhật tuổi 19! 🎉',
+                'description' => 'Dù xa cách, tình bạn vẫn mãi bên nhau. Chúc mừng sinh nhật tuổi 20! 🎉',
                 'icon' => '🎂'
             ]
         ];
